@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+
+<body class="actualizar">
+
+    <section>
+        <h2 style="color: tomato; font-size:80px;">Actualizando Datos...</h2>
+    </section>
+
+    <form action="{{url_for('actualizarUsuario')}}" method="POST">
+        <table class="tablacuatro">
+            <thead>
+                <tr>
+                    <th class="ninguno"></th>
+
+                    <th class="thcuatro"> <label for="nombresCompletos">Actualizar_Nombre(s)</label></th>
+                    <th class="thcuatro"> <label for="numeroCelular">Actualizar_#.Celular</label></th>
+                    <th class="thcuatro"> <label for="cuenta">Actualizar_cuenta</label></th>
+                    <th class="volverdos"><a href="{{url_for('inicio')}}">X</a></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="ninguno"> <input type="hidden" name="Codigo" id="Codigo" value="{{atender[0]}}"></td>
+
+                    <td> <input type="text" name="nombresCompletos" id="nombresCompletos" value="{{atender[1]}}"
+                            placeholder="Por favor ingrese el nuevo nombre del mueble: ">
+                    </td>
+
+                    <td> <input type="text" name="numeroCelular" id="numeroCelular" value="{{atender[2]}}"
+                            placeholder="Por favor ingrese la nueva descripcion del mueble">
+                    </td>
+                    <td><input type="number" name="cuenta" id="cuenta" value="{{atender[3]}}"
+                            placeholder="Por favor ingrese el nuevo precio del mueble">
+                    </td>
+                    <td>
+                        <button type="submit" class="button is.sucess mt-2">Enviar</button>
+
+
+                    </td>
+
+
+                </tr>
+            </tbody>
+
+
+        </table>
+    </form>
+
+
+
+
+</body>

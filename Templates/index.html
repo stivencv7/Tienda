@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Pagina de aterrizaje</title>
+</head>
+
+<body>
+    <div class="bodyuno">
+
+
+
+
+        <section>
+
+
+
+            <div class="menu">
+
+
+                <li class="agregar"><a href="{{url_for('agregar_usuario')}}">agregar usuario</a></li>
+
+                <div class="mensaje">
+                    {% with messages=get_flashed_messages()%}
+                    {%if messages%}
+
+                    <ul>
+                        {%for message in messages%}
+                        <li>{{message}}</li>
+                        {%endfor%}
+                    </ul>
+
+                    {%endif%}
+                    {%endwith%}
+                </div>
+
+                <form method="POST" action="{{url_for('busqueda')}}">
+                    <label for="numeroCelular"></label>
+                    <input class="bus" type="number" name="numeroCelular" value="{{usuarios[0]}}">
+
+
+                    <button type="submit" class="buscar">buscar</button>
+                </form>
+
+            </div>
+            <table class="tabledos">
+
+                <thead>
+                    <tr>
+
+                        <th>nombres</th>
+                        <th>numero celular</th>
+                        <th>cuenta</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for usuario in usuarios %}
+                    <tr>
+
+                        <td>{{usuario[1]}}</td>
+                        <td class="cuentauno"> {{usuario[2]}}</td>
+                        <td class="cuenta">{{usuario[3]}}</td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+
+
+            </table>
+
+
+
+
+
+        </section>
+    </div>
+</body>
+
+</html>

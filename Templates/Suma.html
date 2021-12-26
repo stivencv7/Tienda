@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Document</title>
+</head>
+
+
+
+<body class="bopera">
+    <section>
+        <h2 style="font-size: 80px; color: tomato;">Realizando Operación...</h2>
+    </section>
+
+    <form action="{{url_for('sumatoria')}}" method="POST">
+        <input type="hidden" name="Codigo" value="{{suma[0]}}">
+        <input type="hidden" name="numeroCelular" value="{{suma[2]}}"
+            placeholder="Por favor ingrese la nueva descripcion del mueble">
+
+        <table class="tablaoperacion">
+            <thead>
+                <tr>
+                    <th> <label for="cuenta">cuenta</label></th>
+                    <th class="volverdos"><a href="{{url_for('inicio')}}">X</a></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="number" name="cuenta" id="cuenta" value="{{suma[3]}}"></td>
+                    <td> <button type="submit" class="en">Enviar</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+
+
+</body>
